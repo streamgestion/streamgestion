@@ -1,0 +1,706 @@
+/* Variables de color - NUEVA PALETA OSCURA CON DEGRADADOS */
+:root {
+    --dark-bg-start: #1a1a2e; /* Fondo oscuro inicial */
+    --dark-bg-end: #16213e;   /* Fondo oscuro final para degradado */
+    --dark-purple: #0f3460;   /* Morado/Azul oscuro principal */
+    --accent-blue: #533483;   /* Azul/Púrpura acento */
+    --light-accent-blue: #8a2be2; /* Azul/Púrpura más claro para hover */
+    --text-light: #e0e0e0;    /* Texto claro en fondos oscuros */
+    --text-muted: #aaaaaa;    /* Texto tenue */
+    --border-dark: #33334d;   /* Borde oscuro */
+    --card-bg: #21213c;       /* Fondo de tarjeta oscuro */
+    --success-green: #28a745;
+    --warning-yellow: #ffc107;
+    --danger-red: #dc3545;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Degradado en el fondo principal */
+    background: linear-gradient(to right, var(--dark-bg-start), var(--dark-bg-end));
+    color: var(--text-light); /* Texto claro por defecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--accent-blue); /* Títulos con color de acento */
+}
+
+/* Contenedor de Inicio de Sesión */
+#login-container {
+    background-color: var(--card-bg); /* Fondo de tarjeta oscuro */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+#login-container h2 {
+    margin-bottom: 30px;
+    color: var(--accent-blue);
+    font-size: 2em;
+}
+
+#login-container input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-dark); /* Borde oscuro */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--dark-bg-start); /* Fondo de input oscuro */
+    color: var(--text-light); /* Texto claro en input */
+}
+
+#login-button {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+#login-button:hover {
+    background-color: var(--light-accent-blue); /* Hover más claro */
+    color: var(--white);
+}
+
+.error-message {
+    color: var(--danger-red);
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Contenedor Principal (después de login) */
+#main-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+    background-color: var(--dark-bg-end); /* Fondo principal oscuro */
+}
+
+/* Ocultar elementos */
+.hidden {
+    display: none !important;
+}
+
+/* Sidebar (Panel Lateral Izquierdo) */
+.sidebar {
+    width: 250px;
+    background-color: var(--dark-purple); /* Fondo lateral más oscuro */
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Sombra más oscura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid var(--border-dark); /* Borde oscuro */
+}
+
+.sidebar .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-light); /* Logo claro */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--text-light); /* Texto claro */
+    font-size: 1.1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: var(--text-light); /* Íconos claros */
+}
+
+.sidebar nav ul li a:hover {
+    background-color: var(--accent-blue); /* Degradado al pasar el mouse */
+    color: var(--white);
+}
+
+.sidebar nav ul li a:hover i {
+    color: var(--white);
+}
+
+.sidebar nav ul li a.active {
+    background: linear-gradient(to right, var(--accent-blue), var(--light-accent-blue)); /* Degradado para activo */
+    color: var(--white);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar nav ul li a.active i {
+    color: var(--white);
+}
+
+
+.sidebar-button {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.sidebar-button:hover {
+    background-color: var(--light-accent-blue);
+    color: var(--white);
+}
+
+/* Contenido Principal */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--dark-bg-end); /* Fondo de contenido oscuro */
+    overflow-y: auto; /* Para scroll si el contenido es largo */
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-dark); /* Borde oscuro */
+    padding-bottom: 20px;
+}
+
+.content-header h1 {
+    margin: 0;
+    color: var(--text-light); /* Título de sección claro */
+    font-size: 2.2em;
+}
+
+.header-actions button {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.header-actions button:hover {
+    background-color: var(--light-accent-blue);
+}
+
+.export-button {
+    background-color: var(--dark-purple) !important; /* Color de botón exportar más oscuro */
+}
+
+.export-button:hover {
+    background-color: var(--accent-blue) !important; /* Hover de exportar */
+}
+
+/* Dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    background-color: var(--card-bg); /* Fondo de tarjeta oscuro */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más oscura */
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+    color: var(--accent-blue);
+    margin-top: 0;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-light); /* Números claros */
+    margin: 0;
+}
+
+.dashboard-card.notification-summary p {
+    color: var(--danger-red); /* Para destacar las notificaciones */
+}
+
+/* Tablas */
+.table-actions {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.table-actions input, .table-actions select {
+    padding: 10px;
+    border: 1px solid var(--border-dark); /* Borde oscuro */
+    border-radius: 5px;
+    font-size: 1em;
+    flex-grow: 1;
+    min-width: 200px;
+    background-color: var(--card-bg); /* Fondo de input/select oscuro */
+    color: var(--text-light); /* Texto claro */
+}
+
+.table-actions input::placeholder {
+    color: var(--text-muted); /* Placeholder tenue */
+}
+
+.table-actions select {
+    appearance: none; /* Elimina estilos por defecto del select */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23e0e0e0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Flecha para select */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+
+.table-container {
+    overflow-x: auto; /* Para tablas que excedan el ancho */
+    background-color: var(--card-bg); /* Fondo de tabla oscuro */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-dark); /* Borde oscuro */
+    font-size: 0.95em;
+    color: var(--text-light); /* Texto de tabla claro */
+}
+
+table th {
+    background-color: var(--dark-purple); /* Encabezado de tabla más oscuro */
+    font-weight: 600;
+    color: var(--white); /* Texto de encabezado blanco */
+    text-transform: uppercase;
+}
+
+table tbody tr:hover {
+    background-color: var(--dark-bg-start); /* Hover de fila más oscuro */
+}
+
+/* Botones de acción en tablas */
+.action-buttons button {
+    background: none;
+    border: none;
+    color: var(--light-accent-blue); /* Botones de acción con color de acento */
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 5px;
+    transition: color 0.2s ease;
+}
+
+.action-buttons button.edit:hover {
+    color: var(--white); /* Hover a blanco */
+}
+
+.action-buttons button.delete:hover {
+    color: var(--danger-red);
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-active { background-color: var(--success-green); }
+.status-upcoming { background-color: var(--warning-yellow); }
+.status-expired { background-color: var(--danger-red); }
+
+/* Modales de Formulario */
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro y opaco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.form-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-content {
+    background-color: var(--card-bg); /* Fondo de contenido de modal oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    width: 500px;
+    max-width: 90%;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.form-modal.visible .form-content {
+    transform: translateY(0);
+}
+
+.form-content h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--accent-blue); /* Título de modal con acento */
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.form-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light); /* Etiquetas claras */
+}
+
+.form-content input[type="text"],
+.form-content input[type="number"],
+.form-content input[type="date"],
+.form-content select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-dark); /* Borde oscuro */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--dark-bg-start); /* Fondo de input/select oscuro */
+    color: var(--text-light); /* Texto claro */
+}
+
+.form-content select {
+    width: 100%; /* Para que ocupe todo el ancho sin padding de 20px */
+}
+
+.form-content input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Hace que el icono del calendario sea blanco */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-buttons button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#save-client-button,
+#save-provider-button,
+#save-contract-button,
+#save-service-button { /* Añadido botón de servicio */
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+#save-client-button:hover,
+#save-provider-button:hover,
+#save-contract-button:hover,
+#save-service-button:hover { /* Añadido botón de servicio */
+    background-color: var(--light-accent-blue);
+}
+
+.cancel-button {
+    background-color: var(--border-dark); /* Botón de cancelar oscuro */
+    color: var(--text-light); /* Texto claro */
+}
+
+.cancel-button:hover {
+    background-color: #55556f; /* Hover un poco más claro */
+}
+
+/* Radio buttons para Frecuencia de Pago */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Oculta el input original */
+}
+
+.radio-group label {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid var(--border-dark); /* Borde oscuro */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: var(--text-light); /* Texto claro */
+    background-color: var(--dark-bg-start); /* Fondo de label de radio */
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: var(--accent-blue); /* Color de acento cuando seleccionado */
+    color: var(--white);
+    border-color: var(--accent-blue);
+}
+
+.radio-group label:hover {
+    background-color: var(--card-bg); /* Hover de label de radio */
+}
+
+/* Notificaciones */
+#notifications-list {
+    background-color: var(--card-bg); /* Fondo de notificaciones oscuro */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+}
+
+.notification-item {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-dark); /* Borde oscuro */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item.urgent {
+    background-color: rgba(220, 53, 69, 0.1); /* Fondo más suave para urgente */
+    border-left: 5px solid var(--danger-red);
+}
+
+.notification-item.warning {
+    background-color: rgba(255, 193, 7, 0.1); /* Fondo más suave para warning */
+    border-left: 5px solid var(--warning-yellow);
+}
+
+.notification-item i {
+    font-size: 1.5em;
+    color: var(--accent-blue); /* Íconos de notificación con acento */
+}
+
+.notification-item.urgent i {
+    color: var(--danger-red);
+}
+
+.notification-item.warning i {
+    color: var(--warning-yellow);
+}
+
+.notification-item p {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.05em;
+    color: var(--text-light); /* Texto de notificación claro */
+}
+
+.notification-item .date {
+    font-size: 0.9em;
+    color: var(--text-muted); /* Fecha tenue */
+    text-align: right;
+    white-space: nowrap;
+}
+
+.no-notifications {
+    text-align: center;
+    color: var(--text-muted); /* Texto sin notificaciones tenue */
+    padding: 50px;
+    font-style: italic;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+    #main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-right: none;
+        border-bottom: 1px solid var(--border-dark);
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .sidebar .logo {
+        display: none;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+        gap: 10px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .sidebar nav ul li a i {
+        margin-right: 5px;
+    }
+
+    .sidebar-button {
+        width: auto;
+        padding: 8px 15px;
+        font-size: 0.9em;
+        margin-top: 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .header-actions button {
+        flex-grow: 1;
+        margin-left: 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .form-modal .form-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    #login-container {
+        padding: 30px;
+    }
+
+    .form-content {
+        padding: 20px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+
+    .table-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .table-actions input, .table-actions select {
+        width: 100%;
+        min-width: unset;
+    }
+
+    table th, table td {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+}
